@@ -35,6 +35,11 @@
                     <span>Taking Home Abroad</span>
                 </div>
             </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" onclick="toggleNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="nav-links">
                 <button
                     class="nav-btn active"
@@ -717,6 +722,12 @@
                 if (view === "admin") renderAdmin();
                 if (view === "detail" && currentProduct)
                     renderDetail(currentProduct);
+                // Close mobile nav when navigating.
+                document.querySelector("nav")?.classList.remove("open");
+            }
+
+            function toggleNav() {
+                document.querySelector("nav")?.classList.toggle("open");
             }
 
             /* ══════════════════════ STORE ══════════════════════ */

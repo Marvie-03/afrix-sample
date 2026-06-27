@@ -103,6 +103,29 @@ nav {
     gap: 0.25rem;
     align-items: center;
 }
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    position: relative;
+}
+.nav-toggle span:not(:last-child) {
+    margin-bottom: 6px;
+}
 .nav-btn {
     background: none;
     border: none;
@@ -1264,6 +1287,65 @@ footer ul li:hover {
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 720px) {
+    nav {
+        padding: 0 1rem;
+    }
+    .nav-toggle {
+        display: flex;
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: rgba(15, 37, 25, 0.96);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transform: translateY(-110%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+    nav.open .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .nav-btn {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.08);
+    }
+    .nav-btn.active {
+        background: rgba(255, 255, 255, 0.18);
+    }
+    .nav-btn .badge {
+        top: 10px;
+        right: 14px;
+    }
+    .nav-links::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.08);
+    }
+    .trust-bar {
+        gap: 1.25rem;
+    }
+    .hero-content {
+        padding: 3rem 1.5rem;
+    }
+}
 @media (max-width: 600px) {
     .nav-links {
         gap: 0;
