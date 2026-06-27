@@ -1,0 +1,1223 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Afrix Market — Taking Home Abroad</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- NAV -->
+        <nav>
+            <div class="nav-brand" onclick="goTo('store')">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <circle
+                        cx="11"
+                        cy="11"
+                        r="10"
+                        stroke="#C9973A"
+                        stroke-width="1.5"
+                    />
+                    <path
+                        d="M7 11c0-2.2 1.8-4 4-4s4 1.8 4 4-1.8 4-4 4"
+                        stroke="#C9973A"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                    />
+                    <circle cx="11" cy="11" r="2" fill="#C9973A" />
+                </svg>
+                <div class="title">
+                    Afrix Market
+                    <span>Taking Home Abroad</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <button
+                    class="nav-btn active"
+                    onclick="goTo('store')"
+                    id="nav-store"
+                >
+                    Shop
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="goTo('custom')"
+                    id="nav-custom"
+                >
+                    Custom Order
+                </button>
+                <button class="nav-btn" onclick="goTo('cart')" id="nav-cart">
+                    🛒 Cart
+                    <span class="badge cart-count" id="cart-badge">0</span>
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="goTo('dashboard')"
+                    id="nav-dashboard"
+                >
+                    My Orders
+                </button>
+                <button class="nav-btn" onclick="goTo('admin')" id="nav-admin">
+                    Admin
+                </button>
+            </div>
+        </nav>
+
+        <!-- ══════════════════════ STORE VIEW ══════════════════════ -->
+        <div class="view active" id="view-store">
+            <!-- Hero -->
+            <div class="hero">
+                <img
+                    class="hero-img"
+                    src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=900&q=80"
+                    alt="Nigerian market scene"
+                />
+                <div class="hero-content">
+                    <p class="hero-eyebrow">
+                        Delivering Nigeria to Your Doorstep
+                    </p>
+                    <h1>
+                        Authentic Nigerian goods,
+                        <em>wherever you call home</em>
+                    </h1>
+                    <p>
+                        Food, fashion, and cultural treasures sourced directly
+                        in Nigeria — delivered across the UK.
+                    </p>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                        <button
+                            class="btn btn-gold"
+                            onclick="
+                                document
+                                    .getElementById('products-section')
+                                    .scrollIntoView({ behavior: 'smooth' })
+                            "
+                        >
+                            Browse the Market
+                        </button>
+                        <button
+                            class="btn btn-outline"
+                            onclick="goTo('custom')"
+                        >
+                            Request Custom Item
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust bar -->
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    Secure checkout
+                </div>
+                <div class="trust-item">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <rect x="1" y="3" width="15" height="13" />
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                        <circle cx="5.5" cy="18.5" r="2.5" />
+                        <circle cx="18.5" cy="18.5" r="2.5" />
+                    </svg>
+                    UK-wide delivery
+                </div>
+                <div class="trust-item">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <polyline points="9 11 12 14 22 4" />
+                        <path
+                            d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"
+                        />
+                    </svg>
+                    Sourced directly in Nigeria
+                </div>
+                <div class="trust-item">
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <line x1="12" y1="1" x2="12" y2="23" />
+                        <path
+                            d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                        />
+                    </svg>
+                    GBP pricing — no hidden fees
+                </div>
+            </div>
+
+            <!-- Products -->
+            <div class="section" id="products-section">
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">The Market</span>
+                        <h2>Browse Products</h2>
+                    </div>
+                </div>
+                <!-- Category filter -->
+                <div
+                    class="categories"
+                    id="category-filter"
+                    style="margin-bottom: 1.75rem"
+                >
+                    <div
+                        class="cat-pill active"
+                        onclick="filterCat('all', this)"
+                    >
+                        All Products
+                    </div>
+                    <div class="cat-pill" onclick="filterCat('food', this)">
+                        🍲 Food &amp; Dry Goods
+                    </div>
+                    <div class="cat-pill" onclick="filterCat('fashion', this)">
+                        👗 Fashion &amp; Native Wear
+                    </div>
+                    <div class="cat-pill" onclick="filterCat('cultural', this)">
+                        🏺 Cultural Items
+                    </div>
+                </div>
+                <div class="product-grid" id="product-grid"></div>
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-inner">
+                    <div class="footer-grid">
+                        <div>
+                            <div class="footer-brand">Afrix Market</div>
+                            <div class="footer-tagline">Taking Home Abroad</div>
+                            <p style="font-size: 0.83rem; margin-top: 0.75rem">
+                                Connecting Nigerians and Africans in the UK with
+                                authentic goods from home.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Shop</h4>
+                            <ul>
+                                <li>Food &amp; Dry Goods</li>
+                                <li>Fashion &amp; Native Wear</li>
+                                <li>Cultural Items</li>
+                                <li>Custom Orders</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Support</h4>
+                            <ul>
+                                <li>How It Works</li>
+                                <li>Delivery Info</li>
+                                <li>Returns Policy</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        © 2026 Afrix Market. All rights reserved. — Confidential
+                        MVP v1.0
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ══════════════════════ PRODUCT DETAIL VIEW ══════════════════════ -->
+        <div class="view" id="view-detail">
+            <div class="back-link" onclick="goTo('store')">
+                ← Back to Market
+            </div>
+            <div class="product-detail" id="detail-content"></div>
+        </div>
+
+        <!-- ══════════════════════ CART VIEW ══════════════════════ -->
+        <div class="view" id="view-cart">
+            <div class="cart-layout">
+                <h2>Your Cart</h2>
+                <div id="cart-content"></div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════ CUSTOM ORDER VIEW ══════════════════════ -->
+        <div class="view" id="view-custom">
+            <div class="custom-form-page">
+                <span class="section-label">Bespoke Sourcing</span>
+                <h2>Request a Custom Order</h2>
+                <p>
+                    Can't find what you're looking for? Describe it and we'll
+                    source it directly from Nigeria for you.
+                </p>
+                <div class="form-group">
+                    <label>What would you like?</label>
+                    <textarea
+                        rows="4"
+                        placeholder="e.g. Aso-Oke fabric in deep burgundy for a wedding, approximately 5 yards..."
+                    ></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="number" value="1" min="1" />
+                    </div>
+                    <div class="form-group">
+                        <label>Budget (GBP) — optional</label>
+                        <input type="number" placeholder="e.g. 80" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Special requirements</label>
+                    <textarea
+                        rows="3"
+                        placeholder="Size, colour, occasion, urgency, or anything else we should know..."
+                    ></textarea>
+                </div>
+                <div class="upload-zone">
+                    <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        style="margin: 0 auto 0.5rem; display: block"
+                    >
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <strong>Attach reference photos</strong> — drag &amp; drop
+                    or click to upload<br />
+                    <span style="font-size: 0.78rem"
+                        >JPG, PNG up to 10 MB each</span
+                    >
+                </div>
+                <div style="margin-top: 1.5rem">
+                    <button
+                        class="btn btn-gold"
+                        onclick="submitCustomOrder()"
+                        style="width: 100%; justify-content: center"
+                    >
+                        Submit Request →
+                    </button>
+                </div>
+                <p
+                    style="
+                        font-size: 0.8rem;
+                        margin-top: 1rem;
+                        text-align: center;
+                    "
+                >
+                    We'll review your request and reply within 48 hours via your
+                    dashboard.
+                </p>
+            </div>
+        </div>
+
+        <!-- ══════════════════════ DASHBOARD VIEW ══════════════════════ -->
+        <div class="view" id="view-dashboard">
+            <div class="dash-layout">
+                <div class="dash-sidebar">
+                    <div class="dash-avatar">AO</div>
+                    <div class="dash-name">Adaeze Okonkwo</div>
+                    <div class="dash-email">adaeze.o@email.co.uk</div>
+                    <div class="dash-nav">
+                        <div
+                            class="dash-nav-item active"
+                            onclick="showDashPanel('orders', this)"
+                        >
+                            📦 My Orders
+                        </div>
+                        <div
+                            class="dash-nav-item"
+                            onclick="showDashPanel('custom', this)"
+                        >
+                            ✨ Custom Requests
+                            <span class="notification-badge" id="custom-notif"
+                                >1</span
+                            >
+                        </div>
+                        <div
+                            class="dash-nav-item"
+                            onclick="showDashPanel('settings', this)"
+                        >
+                            ⚙️ Account Settings
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-main">
+                    <!-- Orders panel -->
+                    <div class="dash-panel active" id="dp-orders">
+                        <span class="section-label">Order History</span>
+                        <h2 style="margin-bottom: 1.25rem">My Orders</h2>
+                        <div class="orders-list" id="orders-list"></div>
+                    </div>
+                    <!-- Custom orders panel -->
+                    <div class="dash-panel" id="dp-custom">
+                        <span class="section-label">Bespoke Sourcing</span>
+                        <h2 style="margin-bottom: 1.25rem">Custom Requests</h2>
+                        <div id="custom-orders-list"></div>
+                    </div>
+                    <!-- Settings panel -->
+                    <div class="dash-panel" id="dp-settings">
+                        <span class="section-label">Account</span>
+                        <h2 style="margin-bottom: 1.25rem">Account Settings</h2>
+                        <div class="form-group">
+                            <label>Full Name</label
+                            ><input value="Adaeze Okonkwo" />
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label
+                            ><input value="adaeze.o@email.co.uk" />
+                        </div>
+                        <div class="form-group">
+                            <label>Delivery Address</label
+                            ><textarea rows="3">
+14 Brixton Road, Flat 3, London, SW9 7AA</textarea
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label>New Password</label
+                            ><input
+                                type="password"
+                                placeholder="Leave blank to keep current"
+                            />
+                        </div>
+                        <button class="btn btn-green">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════ ADMIN VIEW ══════════════════════ -->
+        <div class="view" id="view-admin">
+            <div class="admin-layout">
+                <div class="admin-header">
+                    <div>
+                        <span class="section-label">Internal</span>
+                        <h2>Admin Portal</h2>
+                    </div>
+                    <div class="admin-tabs">
+                        <button
+                            class="admin-tab active"
+                            onclick="showAdminTab('orders', this)"
+                        >
+                            Orders
+                        </button>
+                        <button
+                            class="admin-tab"
+                            onclick="showAdminTab('custom', this)"
+                        >
+                            Custom Orders
+                        </button>
+                        <button
+                            class="admin-tab"
+                            onclick="showAdminTab('products', this)"
+                        >
+                            Products
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Orders</div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-sub">+3 today</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Revenue (GBP)</div>
+                        <div class="stat-value">£1,842</div>
+                        <div class="stat-sub">This month</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Pending Review</div>
+                        <div class="stat-value">3</div>
+                        <div class="stat-sub">Custom requests</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Active Products</div>
+                        <div class="stat-value">18</div>
+                        <div class="stat-sub">2 out of stock</div>
+                    </div>
+                </div>
+
+                <!-- Orders panel -->
+                <div class="admin-panel active" id="ap-orders">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-orders-tbody"></tbody>
+                    </table>
+                </div>
+
+                <!-- Custom orders panel -->
+                <div class="admin-panel" id="ap-custom">
+                    <div id="admin-custom-list"></div>
+                </div>
+
+                <!-- Products panel -->
+                <div class="admin-panel" id="ap-products">
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: flex-end;
+                            margin-bottom: 1.25rem;
+                        "
+                    >
+                        <button
+                            class="btn btn-gold"
+                            onclick="openProductModal()"
+                        >
+                            + Add Product
+                        </button>
+                    </div>
+                    <div
+                        class="admin-product-grid"
+                        id="admin-product-grid"
+                    ></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ══════════════════════ SUCCESS VIEW ══════════════════════ -->
+        <div class="view" id="view-success">
+            <div class="success-screen">
+                <div class="success-icon">
+                    <svg
+                        width="36"
+                        height="36"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2.5"
+                    >
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                </div>
+                <h2>Order Placed!</h2>
+                <p>
+                    Your order has been received. You can track it on your
+                    dashboard.
+                </p>
+                <div class="order-ref" id="order-ref-display">
+                    AFX-2024-0091
+                </div>
+                <div
+                    style="
+                        display: flex;
+                        gap: 1rem;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    "
+                >
+                    <button class="btn btn-green" onclick="goTo('dashboard')">
+                        View My Orders
+                    </button>
+                    <button class="btn btn-ghost" onclick="goTo('store')">
+                        Continue Shopping
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT MODAL (Admin) -->
+        <div class="modal-overlay" id="product-modal">
+            <div class="modal">
+                <h3>Add New Product</h3>
+                <div class="form-group">
+                    <label>Product Name</label
+                    ><input placeholder="e.g. Egusi Soup Mix (500g)" />
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Price (GBP)</label
+                        ><input type="number" placeholder="0.00" />
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select>
+                            <option>Food &amp; Dry Goods</option>
+                            <option>Fashion &amp; Native Wear</option>
+                            <option>Cultural Items &amp; Accessories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label
+                    ><textarea
+                        rows="3"
+                        placeholder="Brief description visible on the storefront..."
+                    ></textarea>
+                </div>
+                <div class="upload-zone" style="margin-bottom: 0.5rem">
+                    📷 Upload product photos
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-ghost" onclick="closeProductModal()">
+                        Cancel
+                    </button>
+                    <button class="btn btn-gold" onclick="saveProduct()">
+                        Save Product
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast -->
+        <div class="toast" id="toast"></div>
+
+        <script>
+            /* ══════════════════════ DATA ══════════════════════ */
+            const PRODUCTS = [
+                {
+                    id: 1,
+                    name: "Egusi Soup Mix",
+                    cat: "food",
+                    catLabel: "Food & Dry Goods",
+                    price: 8.99,
+                    desc: "Stone-ground melon seeds with dried crayfish and uziza leaf — ready to cook. 500g.",
+                    img: "https://i.pinimg.com/736x/a1/b1/dd/a1b1dd411c08163bf2c0f04dca84b320.jpg",
+                    available: true,
+                    isNew: true,
+                },
+                {
+                    id: 2,
+                    name: "Jollof Rice Seasoning Kit",
+                    cat: "food",
+                    catLabel: "Food & Dry Goods",
+                    price: 6.5,
+                    desc: "Our signature jollof blend with tomato powder, bay leaf, thyme, and party-jollof secret spice.",
+                    img: "https://i.pinimg.com/736x/57/33/70/5733702655cab1c60f2a381e3f4d1942.jpg",
+                    available: true,
+                },
+                {
+                    id: 3,
+                    name: "Dried Stockfish (Panla)",
+                    cat: "food",
+                    catLabel: "Food & Dry Goods",
+                    price: 14.99,
+                    desc: "Sun-dried Norwegian stockfish, imported via Lagos. Essential for pepper soup and ofe onugbu.",
+                    img: "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+                    available: true,
+                },
+                {
+                    id: 4,
+                    name: "Ogiri Isi (Fermented Castor Seeds)",
+                    cat: "food",
+                    catLabel: "Food & Dry Goods",
+                    price: 4.5,
+                    desc: "Traditional Igbo soup condiment. Rich, pungent aroma — a little goes a long way.",
+                    img: "https://i.pinimg.com/1200x/6b/e1/6f/6be16ffb252fd484e1c6316db5952534.jpg",
+                    available: true,
+                },
+                {
+                    id: 5,
+                    name: "Adire Ankara Fabric (2 yards)",
+                    cat: "fashion",
+                    catLabel: "Fashion & Native Wear",
+                    price: 22.0,
+                    desc: "Hand-dyed indigo batik from Abeokuta artisans. Each piece is unique — patterns vary.",
+                    img: "https://i.pinimg.com/736x/1f/15/54/1f155469806d887da7e4187958810235.jpg",
+                    available: true,
+                    isNew: true,
+                },
+                {
+                    id: 6,
+                    name: "Men's Agbada Set — Cream",
+                    cat: "fashion",
+                    catLabel: "Fashion & Native Wear",
+                    price: 89.0,
+                    desc: "Full three-piece agbada with embroidered detail. Sizes S–XXL. Made-to-order in Lagos.",
+                    img: "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80",
+                    available: true,
+                },
+                {
+                    id: 7,
+                    name: "Ankara Tote Bag",
+                    cat: "fashion",
+                    catLabel: "Fashion & Native Wear",
+                    price: 18.0,
+                    desc: "Waxprint canvas tote with leather handles and zip closure. Limited print run.",
+                    img: "https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=600&q=80",
+                    available: false,
+                },
+                {
+                    id: 8,
+                    name: "Bronze Benin Head (Replica)",
+                    cat: "cultural",
+                    catLabel: "Cultural Items",
+                    price: 55.0,
+                    desc: "Museum-quality resin cast of a Benin Kingdom head — a statement piece for any home.",
+                    img: "https://i.pinimg.com/736x/e0/d3/d8/e0d3d8f1da7a3a79b1f0575a8bd37e02.jpg",
+                    available: true,
+                },
+                {
+                    id: 9,
+                    name: "Handwoven Oja Wrapper Set",
+                    cat: "cultural",
+                    catLabel: "Cultural Items",
+                    price: 34.0,
+                    desc: "Traditional hand-loomed aso-oke in earth tones. One size, 6 yards of continuous fabric.",
+                    img: "https://i.pinimg.com/1200x/f3/67/e5/f367e58f847aa50fdb52b8c3fa6274ab.jpg",
+                    available: true,
+                },
+            ];
+
+            let cart = [];
+            let currentProduct = null;
+
+            /* ══════════════════════ NAVIGATION ══════════════════════ */
+            function goTo(view) {
+                document
+                    .querySelectorAll(".view")
+                    .forEach((v) => v.classList.remove("active"));
+                document
+                    .querySelectorAll(".nav-btn")
+                    .forEach((b) => b.classList.remove("active"));
+                document.getElementById("view-" + view).classList.add("active");
+                const nb = document.getElementById("nav-" + view);
+                if (nb) nb.classList.add("active");
+                window.scrollTo(0, 0);
+                if (view === "cart") renderCart();
+                if (view === "dashboard") renderDashboard();
+                if (view === "admin") renderAdmin();
+                if (view === "detail" && currentProduct)
+                    renderDetail(currentProduct);
+            }
+
+            /* ══════════════════════ STORE ══════════════════════ */
+            let currentCat = "all";
+            function filterCat(cat, el) {
+                currentCat = cat;
+                document
+                    .querySelectorAll(".cat-pill")
+                    .forEach((p) => p.classList.remove("active"));
+                el.classList.add("active");
+                renderProductGrid();
+            }
+            function renderProductGrid() {
+                const grid = document.getElementById("product-grid");
+                const filtered =
+                    currentCat === "all"
+                        ? PRODUCTS
+                        : PRODUCTS.filter((p) => p.cat === currentCat);
+                grid.innerHTML = filtered
+                    .map(
+                        (p) => `
+    <div class="product-card${p.available ? "" : " out-of-stock"}" onclick="openProduct(${p.id})">
+      <div class="product-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+        ${p.isNew && p.available ? '<span class="product-badge badge-new">New</span>' : ""}
+        ${!p.available ? '<span class="product-badge badge-oos">Out of Stock</span>' : ""}
+      </div>
+      <div class="product-info">
+        <div class="product-cat">${p.catLabel}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div class="product-price">£${p.price.toFixed(2)}</div>
+          <button class="add-btn" onclick="event.stopPropagation();addToCart(${p.id})" ${p.available ? "" : "disabled"}>
+            ${p.available ? "Add to cart" : "Unavailable"}
+          </button>
+        </div>
+      </div>
+    </div>
+  `,
+                    )
+                    .join("");
+            }
+
+            /* ══════════════════════ PRODUCT DETAIL ══════════════════════ */
+            function openProduct(id) {
+                currentProduct = PRODUCTS.find((p) => p.id === id);
+                goTo("detail");
+            }
+            function renderDetail(p) {
+                document.getElementById("detail-content").innerHTML = `
+    <div>
+      <div class="detail-img-main"><img src="${p.img}" alt="${p.name}"/></div>
+      <div class="detail-thumb-row">
+        <div class="detail-thumb active"><img src="${p.img}" alt=""/></div>
+        <div class="detail-thumb"><img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=200&q=70" alt=""/></div>
+        <div class="detail-thumb"><img src="https://images.unsplash.com/photo-1620912189865-1e8a33da5c85?w=200&q=70" alt=""/></div>
+      </div>
+    </div>
+    <div class="detail-info">
+      <div class="detail-cat">${p.catLabel}</div>
+      <h2>${p.name}</h2>
+      <div class="detail-price">£${p.price.toFixed(2)}</div>
+      <p class="detail-desc">${p.desc}</p>
+      <div class="qty-row">
+        <span class="qty-label">Qty:</span>
+        <div class="qty-ctrl">
+          <button onclick="changeQty(-1)">−</button>
+          <span id="detail-qty">1</span>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+      <div class="detail-actions">
+        <button class="btn btn-gold" onclick="addToCartDetail(${p.id})" ${p.available ? "" : "disabled"} style="justify-content:center;">
+          ${p.available ? "Add to Cart" : "Out of Stock"}
+        </button>
+        <button class="btn btn-ghost" onclick="goTo('store')" style="justify-content:center;">← Back</button>
+      </div>
+      <div class="detail-tags">
+        <span class="tag">Ships to UK</span>
+        <span class="tag">Sourced in Nigeria</span>
+        <span class="tag">GBP Pricing</span>
+        ${p.available ? '<span class="tag" style="background:#E6F0EB;color:#2B5E42;">In Stock</span>' : '<span class="tag" style="background:#FDE8E8;color:#7B2020;">Out of Stock</span>'}
+      </div>
+    </div>
+  `;
+            }
+            let detailQty = 1;
+            function changeQty(d) {
+                detailQty = Math.max(1, detailQty + d);
+                const el = document.getElementById("detail-qty");
+                if (el) el.textContent = detailQty;
+            }
+            function addToCartDetail(id) {
+                const p = PRODUCTS.find((x) => x.id === id);
+                for (let i = 0; i < detailQty; i++) addToCart(id);
+                // only show toast once
+                showToast(`${detailQty}× ${p.name} added to cart`);
+                detailQty = 1;
+            }
+
+            /* ══════════════════════ CART ══════════════════════ */
+            function addToCart(id) {
+                const p = PRODUCTS.find((x) => x.id === id);
+                const existing = cart.find((i) => i.id === id);
+                if (existing) existing.qty++;
+                else cart.push({ ...p, qty: 1 });
+                updateCartBadge();
+                showToast(`${p.name} added to cart`);
+            }
+            function updateCartBadge() {
+                const total = cart.reduce((s, i) => s + i.qty, 0);
+                const badge = document.getElementById("cart-badge");
+                if (total > 0) {
+                    badge.textContent = total;
+                    badge.classList.add("has-items");
+                } else {
+                    badge.classList.remove("has-items");
+                }
+            }
+            function removeFromCart(id) {
+                cart = cart.filter((i) => i.id !== id);
+                updateCartBadge();
+                renderCart();
+            }
+            function cartTotal() {
+                return cart.reduce((s, i) => s + i.price * i.qty, 0);
+            }
+            function renderCart() {
+                const el = document.getElementById("cart-content");
+                if (cart.length === 0) {
+                    el.innerHTML = `<div class="cart-empty"><p>Your cart is empty.</p><button class="btn btn-gold" onclick="goTo('store')">Browse the Market</button></div>`;
+                    return;
+                }
+                const shippingNote =
+                    cartTotal() >= 60
+                        ? '<span style="color:var(--green-mid);font-weight:600;">✓ Free shipping on this order</span>'
+                        : "£12.00";
+                const shipping = cartTotal() >= 60 ? 0 : 12;
+                el.innerHTML = `
+    ${cart
+        .map(
+            (i) => `
+      <div class="cart-item">
+        <img class="cart-item-img" src="${i.img}" alt="${i.name}"/>
+        <div class="cart-item-info">
+          <div class="cart-item-cat">${i.catLabel}</div>
+          <div class="cart-item-name">${i.name}</div>
+          <div class="cart-item-price">£${i.price.toFixed(2)} × ${i.qty} = £${(i.price * i.qty).toFixed(2)}</div>
+        </div>
+        <button class="cart-item-remove" onclick="removeFromCart(${i.id})" title="Remove">✕</button>
+      </div>
+    `,
+        )
+        .join("")}
+    <div class="cart-summary">
+      <div class="cart-summary-row"><span>Subtotal</span><span>£${cartTotal().toFixed(2)}</span></div>
+      <div class="cart-summary-row"><span>Shipping</span><span>${shippingNote}</span></div>
+      <div class="cart-summary-row total"><span>Total</span><span>£${(cartTotal() + shipping).toFixed(2)}</span></div>
+    </div>
+    <div class="checkout-form">
+      <h3 style="margin-bottom:1.25rem;font-family:'Playfair Display',serif;">Delivery & Payment</h3>
+      <div class="form-group"><label>Full Name</label><input value="Adaeze Okonkwo"/></div>
+      <div class="form-group"><label>Delivery Address</label><textarea rows="2">14 Brixton Road, Flat 3, London, SW9 7AA</textarea></div>
+      <div class="form-row">
+        <div class="form-group"><label>City</label><input value="London"/></div>
+        <div class="form-group"><label>Postcode</label><input value="SW9 7AA"/></div>
+      </div>
+      <div class="pay-card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        <div>
+          <div style="font-weight:600;color:#fff;">Pay with Paystack</div>
+          <div style="font-size:0.8rem;opacity:0.7;">Secure card payment in GBP — you'll be redirected to Paystack to complete payment.</div>
+        </div>
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;" onclick="placeOrder()">
+        Place Order — £${(cartTotal() + shipping).toFixed(2)}
+      </button>
+      <p style="font-size:0.78rem;text-align:center;margin-top:0.75rem;">By placing your order you agree to our terms. No card data is stored by Afrix Market.</p>
+    </div>
+  `;
+            }
+
+            function placeOrder() {
+                const ref =
+                    "AFX-2026-" +
+                    String(Math.floor(Math.random() * 9000) + 1000);
+                document.getElementById("order-ref-display").textContent = ref;
+                cart = [];
+                updateCartBadge();
+                goTo("success");
+            }
+
+            /* ══════════════════════ CUSTOM ORDER ══════════════════════ */
+            function submitCustomOrder() {
+                showToast(
+                    "Custom request submitted! We'll review it within 48 hours.",
+                );
+                setTimeout(() => goTo("dashboard"), 1500);
+            }
+
+            /* ══════════════════════ DASHBOARD ══════════════════════ */
+            const ORDERS = [
+                {
+                    id: "AFX-2026-0087",
+                    title: "Egusi Soup Mix × 2, Jollof Rice Seasoning Kit",
+                    date: "21 Jun 2026",
+                    price: "£24.48",
+                    status: "Processing",
+                    statusClass: "s-processing",
+                },
+                {
+                    id: "AFX-2026-0073",
+                    title: "Adire Ankara Fabric (2 yards)",
+                    date: "8 Jun 2026",
+                    price: "£34.00",
+                    status: "Shipped",
+                    statusClass: "s-shipped",
+                },
+                {
+                    id: "AFX-2026-0059",
+                    title: "Bronze Benin Head (Replica)",
+                    date: "29 May 2026",
+                    price: "£67.00",
+                    status: "Delivered",
+                    statusClass: "s-delivered",
+                },
+                {
+                    id: "AFX-2026-0041",
+                    title: "Men's Agbada Set — Cream",
+                    date: "11 May 2026",
+                    price: "£101.00",
+                    status: "Delivered",
+                    statusClass: "s-delivered",
+                },
+            ];
+            const CUSTOM_ORDERS = [
+                {
+                    id: "CX-2026-0012",
+                    title: "Burgundy Aso-Oke fabric, 5 yards, for wedding",
+                    date: "23 Jun 2026",
+                    status: "Quote Sent",
+                    statusClass: "s-quote",
+                    messages: [
+                        {
+                            from: "customer",
+                            text: "Hi, I'm looking for deep burgundy aso-oke fabric for a wedding in August. Approximately 5 yards.",
+                            time: "23 Jun, 10:02",
+                        },
+                        {
+                            from: "admin",
+                            text: "Hello Adaeze! We can source this for you. 5 yards of burgundy aso-oke would be £48 including shipping. Shall we proceed?",
+                            time: "24 Jun, 14:30",
+                        },
+                    ],
+                },
+            ];
+            function renderDashboard() {
+                document.getElementById("orders-list").innerHTML = ORDERS.map(
+                    (o) => `
+    <div class="order-card">
+      <div>
+        <div class="order-id">${o.id}</div>
+        <div class="order-title">${o.title}</div>
+        <div class="order-date">${o.date}</div>
+      </div>
+      <div class="order-right">
+        <div class="order-price">${o.price}</div>
+        <div class="status-pill ${o.statusClass}">${o.status}</div>
+      </div>
+    </div>
+  `,
+                ).join("");
+
+                document.getElementById("custom-orders-list").innerHTML =
+                    CUSTOM_ORDERS.map(
+                        (o) => `
+    <div style="background:var(--white);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--shadow);margin-bottom:1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.25rem;">
+        <div>
+          <div class="order-id">${o.id}</div>
+          <div class="order-title">${o.title}</div>
+          <div class="order-date">${o.date}</div>
+        </div>
+        <div class="status-pill ${o.statusClass}">${o.status}</div>
+      </div>
+      <div style="margin-bottom:1rem;">
+        ${o.messages
+            .map(
+                (m) => `
+          <div class="thread-msg${m.from === "admin" ? " admin-msg" : ""}">
+            <strong style="font-size:0.82rem;">${m.from === "admin" ? "Afrix Team" : "You"}</strong>
+            <p>${m.text}</p>
+            <div class="thread-meta">${m.time}</div>
+          </div>
+        `,
+            )
+            .join("")}
+      </div>
+      ${
+          o.status === "Quote Sent"
+              ? `
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+          <button class="btn btn-gold" onclick="showToast('Quote accepted! Proceeding to payment...')">Accept Quote & Pay £48.00</button>
+          <button class="btn btn-ghost" onclick="showToast('Request declined.')">Decline</button>
+        </div>
+      `
+              : ""
+      }
+    </div>
+  `,
+                    ).join("");
+            }
+            function showDashPanel(panel, el) {
+                document
+                    .querySelectorAll(".dash-panel")
+                    .forEach((p) => p.classList.remove("active"));
+                document
+                    .querySelectorAll(".dash-nav-item")
+                    .forEach((n) => n.classList.remove("active"));
+                document.getElementById("dp-" + panel).classList.add("active");
+                el.classList.add("active");
+                if (panel === "custom")
+                    document.getElementById("custom-notif").style.display =
+                        "none";
+            }
+
+            /* ══════════════════════ ADMIN ══════════════════════ */
+            const ADMIN_ORDERS = [
+                {
+                    id: "AFX-2026-0091",
+                    customer: "Chiamaka Eze",
+                    items: "Dried Stockfish × 1, Egusi Mix × 2",
+                    total: "£36.97",
+                    date: "26 Jun",
+                    status: "Placed",
+                    statusClass: "s-placed",
+                },
+                {
+                    id: "AFX-2026-0090",
+                    customer: "Babatunde Okafor",
+                    items: "Men's Agbada Set × 1",
+                    total: "£101.00",
+                    date: "26 Jun",
+                    status: "Processing",
+                    statusClass: "s-processing",
+                },
+                {
+                    id: "AFX-2026-0087",
+                    customer: "Adaeze Okonkwo",
+                    items: "Egusi Mix × 2, Jollof Kit × 1",
+                    total: "£24.48",
+                    date: "21 Jun",
+                    status: "Processing",
+                    statusClass: "s-processing",
+                },
+                {
+                    id: "AFX-2026-0073",
+                    customer: "Adaeze Okonkwo",
+                    items: "Adire Ankara Fabric × 1",
+                    total: "£34.00",
+                    date: "8 Jun",
+                    status: "Shipped",
+                    statusClass: "s-shipped",
+                },
+                {
+                    id: "AFX-2026-0066",
+                    customer: "Ngozi Adeyemi",
+                    items: "Bronze Benin Head × 1",
+                    total: "£67.00",
+                    date: "3 Jun",
+                    status: "Delivered",
+                    statusClass: "s-delivered",
+                },
+            ];
+            const ADMIN_CUSTOM = [
+                {
+                    id: "CX-2026-0012",
+                    customer: "Adaeze Okonkwo",
+                    desc: "Burgundy Aso-Oke, 5 yards, wedding",
+                    date: "23 Jun",
+                    status: "Quote Sent",
+                    statusClass: "s-quote",
+                },
+                {
+                    id: "CX-2026-0011",
+                    customer: "Emeka Nwosu",
+                    desc: "Custom agbada with family emblem embroidery",
+                    date: "20 Jun",
+                    status: "Pending Review",
+                    statusClass: "s-pending",
+                },
+                {
+                    id: "CX-2026-0009",
+                    customer: "Funmi Adeleke",
+                    desc: "30 pieces of homemade chin-chin for a birthday",
+                    date: "14 Jun",
+                    status: "Confirmed",
+                    statusClass: "s-confirmed",
+                },
+            ];
+            function renderAdmin() {
+                document.getElementById("admin-orders-tbody").innerHTML =
+                    ADMIN_ORDERS.map(
+                        (o) => `
+    <tr>
+      <td><code style="font-size:0.8rem;color:var(--muted);">${o.id}</code></td>
+      <td>${o.customer}</td>
+      <td style="color:var(--muted);font-size:0.82rem;">${o.items}</td>
+      <td style="font-weight:700;color:var(--green);">${o.total}</td>
+      <td style="color:var(--muted);">${o.date}</td>
+      <td><span class="status-pill ${o.statusClass}">${o.status}</span></td>
+      <td>
+        <select class="admin-select" onchange="showToast('Status updated to '+this.value)">
+          <option>Placed</option>
+          <option>Processing</option>
+          <option>Shipped</option>
+          <option>Delivered</option>
+        </select>
+      </td>
+    </tr>
+  `,
+                    ).join("");
+
+                document.getElementById("admin-custom-list").innerHTML =
+                    ADMIN_CUSTOM.map(
+                        (o) => `
+    <div style="background:var(--white);border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow);margin-bottom:1rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="order-id">${o.id} · ${o.date}</div>
+        <div class="order-title">${o.customer}</div>
+        <div style="font-size:0.85rem;color:var(--muted);margin-top:0.25rem;">${o.desc}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+        <span class="status-pill ${o.statusClass}">${o.status}</span>
+        <button class="btn btn-ghost" style="padding:0.4rem 0.9rem;font-size:0.8rem;" onclick="showToast('Opening message thread...')">Reply</button>
+        ${o.status === "Pending Review" ? '<button class="btn btn-gold" style="padding:0.4rem 0.9rem;font-size:0.8rem;" onclick="showToast(\'Quote sent!\')">Send Quote</button>' : ""}
+      </div>
+    </div>
+  `,
+                    ).join("");
+
+                document.getElementById("admin-product-grid").innerHTML =
+                    PRODUCTS.map(
+                        (p) =>
+                            `
+    <div class="admin-product-card">
+      <img src="${p.img}" alt="${p.name}"/>
+      <div class="admin-product-info">
+        <div style="font-size:0.7rem;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">${p.catLabel}</div>
+        <h3>${p.name}</h3>
+        <div style="font-weight:700;color:var(--green);">£${p.price.toFixed(2)}</div>
+        <div style="font-size:0.78rem;margin-top:0.2rem;color:${p.available ? "var(--green-mid)" : "var(--red)"};">${p.available ? "● In Stock" : "● Out of Stock"}</div>
+        <div class="admin-product-actions">
+          <button class="admin-btn admin-btn-edit" onclick="showToast('Edit mode: '+` +
+                            "`" +
+                            "${p.name}" +
+                            "`" +
+                            `)">Edit</button>
+          <button class="admin-btn" style="background:var(--sand);color:var(--muted);" onclick="showToast('Stock status toggled')">Toggle Stock</button>
+        </div>
+      </div>
+    </div>
+  `,
+                    ).join("");
+            }
+            function showAdminTab(tab, el) {
+                document
+                    .querySelectorAll(".admin-panel")
+                    .forEach((p) => p.classList.remove("active"));
+                document
+                    .querySelectorAll(".admin-tab")
+                    .forEach((t) => t.classList.remove("active"));
+                document.getElementById("ap-" + tab).classList.add("active");
+                el.classList.add("active");
+            }
+            function openProductModal() {
+                document.getElementById("product-modal").classList.add("open");
+            }
+            function closeProductModal() {
+                document
+                    .getElementById("product-modal")
+                    .classList.remove("open");
+            }
+            function saveProduct() {
+                closeProductModal();
+                showToast("Product saved successfully!");
+            }
+
+            /* ══════════════════════ TOAST ══════════════════════ */
+            let toastTimer;
+            function showToast(msg) {
+                const t = document.getElementById("toast");
+                t.textContent = msg;
+                t.classList.add("show");
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => t.classList.remove("show"), 3000);
+            }
+
+            /* ══════════════════════ INIT ══════════════════════ */
+            renderProductGrid();
+        </script>
+    </body>
+</html>
